@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout1"
+    tools:context="com.example.welll.myvocabulary.MainActivity">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ed_en"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="English"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv1"
+        android:layout_marginTop="37dp"
+        android:text="Chinese"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ed_cn"
+        android:layout_marginTop="32dp"
+        android:text="Notes"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/ed_en"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="26dp"
+        android:layout_toEndOf="@+id/btn_view"
+        android:layout_toRightOf="@+id/btn_view"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/ed_cn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ed_en"
+        android:layout_alignStart="@+id/ed_en"
+        android:layout_alignTop="@+id/tv2"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/ed_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ed_cn"
+        android:layout_alignStart="@+id/ed_cn"
+        android:layout_alignTop="@+id/tv3"
+        android:ems="10"
+        android:hint="part of format, examples..."
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Add Word"
+        android:layout_below="@+id/tv3"
+        android:layout_alignRight="@+id/tv3"
+        android:layout_alignEnd="@+id/tv3" />
+
+    <Button
+        android:id="@+id/btn_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_add"
+        android:layout_marginTop="17dp"
+        android:text="View" />
+
+    <Button
+        android:id="@+id/btn_mem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_view"
+        android:layout_alignBottom="@+id/btn_view"
+        android:layout_centerHorizontal="true"
+        android:text="Memorize" />
+
+    <ListView
+        android:id="@+id/list_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_view"
+        android:layout_marginTop="33dp" />
+</RelativeLayout>
