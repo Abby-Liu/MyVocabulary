@@ -19,10 +19,11 @@ import java.util.ArrayList;
 public class PageView extends Activity {
     private WordDbHelper wordDb; //mHelper
 
-    private ListView mWordListView; // for ArrayAdapter
+    //private ListView mWordListView; // for ArrayAdapter
     private ListView listView; //for SimpleCursorAdapter
     private SimpleCursorAdapter adapter;
-    private ArrayAdapter<String> mAdapter;
+
+    private ArrayAdapter<String> mAdapter; //unused
     final String[] from = new String[] {
             WordContract.WordEntry._ID, WordContract.WordEntry.COL_1, WordContract.WordEntry.COL_2
     };
@@ -34,11 +35,12 @@ public class PageView extends Activity {
         super.onCreate(savedInstanceState);
 
         wordDb = new WordDbHelper(this);
-        mWordListView = (ListView)findViewById(R.id.listView);
+        //mWordListView = (ListView)findViewById(R.id.listView);
         listView = findViewById(R.id.list_view); // @R.layout.empty_list
         SimpleCursorAdapterView();
         ModifyWord();
     }
+
     public void SimpleCursorAdapterView(){
         SQLiteDatabase db = wordDb.getReadableDatabase();
         Cursor cursor = db.query(WordContract.WordEntry.TABLE,
@@ -53,7 +55,6 @@ public class PageView extends Activity {
         adapter.notifyDataSetChanged();
 
         listView.setAdapter(adapter);
-
     }
 
     private void ModifyWord(){
@@ -106,7 +107,7 @@ public class PageView extends Activity {
 
         if(mAdapter == null){
             mAdapter = new ArrayAdapter<String>(this, R.layout.activity_view_record, R.id.en, arrayList);
-            mWordListView.setAdapter(mAdapter);
+            //mWordListView.setAdapter(mAdapter);
         }
         else {
             mAdapter.clear();

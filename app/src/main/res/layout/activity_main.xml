@@ -75,11 +75,11 @@
         android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
         android:text="Add Word"
-        android:layout_below="@+id/tv3"
-        android:layout_alignRight="@+id/tv3"
-        android:layout_alignEnd="@+id/tv3" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_below="@+id/ed_notes"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/btn_view"
@@ -89,23 +89,30 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btn_add"
         android:layout_marginTop="17dp"
-        android:text="View" />
+        android:text="View Userdefined Dic"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <Button
+        android:id="@+id/btn_viewtoefl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View TOEFL"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_alignTop="@+id/btn_view"
+        android:layout_toRightOf="@+id/btn_view"
+        android:layout_toEndOf="@+id/btn_view"
+        android:layout_marginLeft="52dp"
+        android:layout_marginStart="52dp" />
 
     <Button
         android:id="@+id/btn_mem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btn_view"
-        android:layout_alignBottom="@+id/btn_view"
-        android:layout_centerHorizontal="true"
-        android:text="Memorize" />
-
-    <ListView
-        android:id="@+id/list_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:text="Memorize"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_below="@+id/btn_view"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/btn_view"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="12dp" />
+
 </RelativeLayout>

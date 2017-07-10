@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".PageView"> </activity>
         <activity android:name=".PageMem"> </activity>
-        <activity android:name=".ModifyWordActivity"></activity>
+        <activity android:name=".PageViewToefl"> </activity>
+        <activity android:name=".ModifyWordActivity"> </activity>
+
     </application>
 
 </manifest>

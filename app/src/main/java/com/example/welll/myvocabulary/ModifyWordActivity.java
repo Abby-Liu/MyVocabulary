@@ -41,9 +41,9 @@ public class ModifyWordActivity extends Activity{
         String en = intent.getStringExtra("ENGLISH");
         String cn = intent.getStringExtra("CHINESE");
 
-        Log.v("Log id=",id);
-        Log.v("Log en=",en);
-        Log.v("Log cn=",id);
+//        Log.v("Log id=",id);
+//        Log.v("Log en=",en);
+//        Log.v("Log cn=",id);
         Toast.makeText(getApplicationContext(), id+" "+en+" "+cn,Toast.LENGTH_SHORT).show();
 
         _ID = Long.parseLong(id);
@@ -54,6 +54,10 @@ public class ModifyWordActivity extends Activity{
         String notes = c.getString(c.getColumnIndex(WordContract.WordEntry.COL_3));
 
         ed_notes.setText(notes);
+
+//        Cursor c2 = TestToeflCursor(db, "1");
+//        String testToeflStr = c2.getString(c.getColumnIndex(WordContract.ToeflEntry.COL_1));
+//        Toast.makeText(getApplicationContext(), testToeflStr ,Toast.LENGTH_LONG).show();
 
         //Toast.makeText(getApplicationContext(), notes,Toast.LENGTH_LONG).show();
         //Log.v("Log string=",str);
@@ -68,9 +72,11 @@ public class ModifyWordActivity extends Activity{
                 String en = ed_en.getText().toString();
                 String cn = ed_cn.getText().toString();
                 String notes = ed_notes.getText().toString();
+
                 cv.put("ENGLISH", en);
                 cv.put("CHINESE", cn);
                 cv.put("NOTES", notes);
+
                 db.update(WordContract.WordEntry.TABLE, cv, "_ID="+_ID, null);
                 Toast.makeText(getApplicationContext(), "You want to update to " + notes,Toast.LENGTH_SHORT).show();
                 returnHome();
@@ -93,6 +99,15 @@ public class ModifyWordActivity extends Activity{
     public Cursor SelectNotesCursor(SQLiteDatabase db, String id){
         Cursor cursor = db.rawQuery("SELECT * FROM "
                 + WordContract.WordEntry.TABLE
+                +" WHERE _ID = ? ", new String[] {id});
+        if(cursor != null)
+            cursor.moveToFirst();
+        return cursor;
+    }
+
+    public Cursor TestToeflCursor (SQLiteDatabase db, String id){
+        Cursor cursor = db.rawQuery("SELECT * FROM "
+                + WordContract.ToeflEntry.TABLE
                 +" WHERE _ID = ? ", new String[] {id});
         if(cursor != null)
             cursor.moveToFirst();
